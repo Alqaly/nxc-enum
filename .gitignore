@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+demo-output/
+scan/
+scan-*/
+nxc-enum-*/
+*.ccache
+*.kirbi
+*.zip
+*.log

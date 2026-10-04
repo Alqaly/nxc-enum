@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "type": "computers",
+    "version": 5
+  },
+  "data": [
+    {
+      "ObjectIdentifier": "S-1-5-21-100-200-300-1301",
+      "Properties": {
+        "name": "WS01.EXAMPLE.TEST"
+      },
+      "LocalAdmins": {
+        "Collected": true,
+        "Results": [
+          {
+            "ObjectIdentifier": "S-1-5-21-100-200-300-1201",
+            "ObjectType": "Group"
+          }
+        ]
+      },
+      "Sessions": {
+        "Collected": true,
+        "Results": [
+          {
+            "ComputerSID": "S-1-5-21-100-200-300-1301",
+            "UserSID": "S-1-5-21-100-200-300-1102"
+          }
+        ]
+      },
+      "Aces": [
+        {
+          "PrincipalSID": "S-1-5-21-100-200-300-1101",
+          "PrincipalType": "User",
+          "RightName": "GetChanges"
+        }
+      ]
+    },
+    {
+      "ObjectIdentifier": "S-1-5-21-100-200-300-1302",
+      "Properties": {
+        "name": "WS02.EXAMPLE.TEST"
+      },
+      "AllowedToAct": [
+        {
+          "ObjectIdentifier": "S-1-5-21-100-200-300-1101",
+          "ObjectType": "User"
+        }
+      ]
+    }
+  ]
+}

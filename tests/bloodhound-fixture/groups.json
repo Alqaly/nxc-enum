@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "type": "groups",
+    "version": 5
+  },
+  "data": [
+    {
+      "ObjectIdentifier": "S-1-5-21-100-200-300-1201",
+      "Properties": {
+        "name": "OPS@EXAMPLE.TEST"
+      },
+      "Members": [
+        {
+          "ObjectIdentifier": "S-1-5-21-100-200-300-1101",
+          "ObjectType": "User"
+        }
+      ]
+    },
+    {
+      "ObjectIdentifier": "S-1-5-21-100-200-300-512",
+      "Properties": {
+        "name": "DOMAIN ADMINS@EXAMPLE.TEST"
+      },
+      "Members": [
+        {
+          "ObjectIdentifier": "S-1-5-21-100-200-300-1102",
+          "ObjectType": "User"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,452 @@
+{
+  "flags": {
+    "smb": [
+      "--amsi-bypass",
+      "--append-host",
+      "--clear-obfscripts",
+      "--codec",
+      "--computers",
+      "--content",
+      "--dcom-timeout",
+      "--delegate",
+      "--depth",
+      "--dir",
+      "--disks",
+      "--dns-server",
+      "--domain",
+      "--dpapi",
+      "--enabled",
+      "--exclude-dirs",
+      "--exclude-shares",
+      "--exec-method",
+      "--file-write-check",
+      "--filter-shares",
+      "--force-ps32",
+      "--gen-relay-list",
+      "--generate-hosts-file",
+      "--generate-krb5-file",
+      "--generate-st",
+      "--generate-tgt",
+      "--get-file",
+      "--get-folder",
+      "--get-output-tries",
+      "--groups",
+      "--hash",
+      "--history",
+      "--ignore-empty-folders",
+      "--interfaces",
+      "--just-trust-keys",
+      "--kdcHost",
+      "--kerberos-keys",
+      "--laps",
+      "--list-snapshots",
+      "--local-auth",
+      "--local-groups",
+      "--loggedon-users",
+      "--loggedon-users-filter",
+      "--lsa",
+      "--mkfile",
+      "--no-admin-check",
+      "--no-encode",
+      "--no-output",
+      "--no-progress",
+      "--no-smbv1",
+      "--ntds",
+      "--obfs",
+      "--only-files",
+      "--pass-pol",
+      "--password",
+      "--pattern",
+      "--port",
+      "--put-file",
+      "--pvk",
+      "--qwinsta",
+      "--recursive",
+      "--reg-sessions",
+      "--regex",
+      "--rid-brute",
+      "--sam",
+      "--sccm",
+      "--self",
+      "--share",
+      "--shares",
+      "--silent",
+      "--smb-server-port",
+      "--smb-sessions",
+      "--smb-timeout",
+      "--spider",
+      "--spider-folder",
+      "--spn",
+      "--taskkill",
+      "--tasklist",
+      "--threads",
+      "--trust-keys",
+      "--u2u",
+      "--use-kcache",
+      "--user",
+      "--username",
+      "--users",
+      "--users-export",
+      "--wmi-namespace",
+      "--wmi-query",
+      "-H",
+      "-X",
+      "-d",
+      "-k",
+      "-p",
+      "-t",
+      "-u",
+      "-x"
+    ],
+    "ldap": [
+      "--active-users",
+      "--admin-count",
+      "--asreproast",
+      "--base-dn",
+      "--bloodhound",
+      "--collection",
+      "--computers",
+      "--dc-list",
+      "--dns-server",
+      "--find-delegation",
+      "--get-sid",
+      "--gmsa",
+      "--gmsa-convert-id",
+      "--gmsa-decrypt-lsa",
+      "--groups",
+      "--hash",
+      "--kdcHost",
+      "--kerberoast",
+      "--kerberoast-account",
+      "--kerberoasting",
+      "--ldap-timeout",
+      "--no-preauth-targets",
+      "--no-progress",
+      "--ous",
+      "--pass-pol",
+      "--password",
+      "--password-not-required",
+      "--port",
+      "--pso",
+      "--query",
+      "--simple-bind",
+      "--targeted-kerberoast",
+      "--threads",
+      "--trusted-for-delegation",
+      "--use-kcache",
+      "--username",
+      "--users",
+      "--users-export",
+      "-H",
+      "-c",
+      "-d",
+      "-k",
+      "-p",
+      "-t",
+      "-u"
+    ],
+    "mssql": [
+      "--database",
+      "--kdcHost",
+      "--list-backups",
+      "--local-auth",
+      "--mssql-timeout",
+      "--no-progress",
+      "--password",
+      "--port",
+      "--query",
+      "--rid-brute",
+      "--threads",
+      "--username",
+      "-H",
+      "-d",
+      "-k",
+      "-p",
+      "-t",
+      "-u"
+    ],
+    "rdp": [
+      "--local-auth",
+      "--nla-screenshot",
+      "--no-progress",
+      "--password",
+      "--port",
+      "--rdp-timeout",
+      "--threads",
+      "--username",
+      "-H",
+      "-d",
+      "-p",
+      "-t",
+      "-u"
+    ],
+    "ssh": [
+      "--no-progress",
+      "--password",
+      "--port",
+      "--ssh-timeout",
+      "--sudo-check",
+      "--threads",
+      "--username",
+      "-p",
+      "-t",
+      "-u"
+    ],
+    "ftp": [
+      "--ls",
+      "--no-progress",
+      "--password",
+      "--port",
+      "--threads",
+      "--username",
+      "-p",
+      "-t",
+      "-u"
+    ],
+    "nfs": [
+      "--enum-shares",
+      "--nfs-timeout",
+      "--no-progress",
+      "--password",
+      "--port",
+      "--shares",
+      "--threads",
+      "--username",
+      "-p",
+      "-t",
+      "-u"
+    ],
+    "vnc": [
+      "--no-progress",
+      "--password",
+      "--port",
+      "--screenshot",
+      "--threads",
+      "--username",
+      "--vnc-timeout",
+      "-p",
+      "-t",
+      "-u"
+    ],
+    "winrm": [
+      "--username",
+      "--password",
+      "--no-progress",
+      "--threads",
+      "-u",
+      "-p",
+      "-t",
+      "-H",
+      "-d",
+      "--local-auth",
+      "--port",
+      "--check-proto",
+      "--http-timeout",
+      "--dir"
+    ],
+    "wmi": [
+      "--username",
+      "--password",
+      "--no-progress",
+      "--threads",
+      "-u",
+      "-p",
+      "-t",
+      "-H",
+      "-d",
+      "--local-auth",
+      "--rpc-timeout",
+      "--wmi-query"
+    ]
+  },
+  "modules": {
+    "daclread": {
+      "name": "daclread",
+      "description": "Read and backup the Discretionary Access Control List of objects. Be careful, this module cannot read the DACLS recursively, see more explanation in the options.",
+      "supported_protocols": [
+        "ldap"
+      ]
+    },
+    "maq": {
+      "name": "maq",
+      "description": "Retrieves the MachineAccountQuota domain-level attribute",
+      "supported_protocols": [
+        "ldap"
+      ]
+    },
+    "spider_plus": {
+      "name": "spider_plus",
+      "description": "List files recursively and save a JSON share-file metadata to the 'OUTPUT_FOLDER'. See module options for finer configuration.",
+      "supported_protocols": [
+        "smb"
+      ]
+    },
+    "sccm": {
+      "name": "sccm",
+      "description": "Find a SCCM infrastructure in the Active Directory",
+      "supported_protocols": [
+        "ldap"
+      ]
+    },
+    "entra-id": {
+      "name": "entra-id",
+      "description": "Find the Entra ID sync server",
+      "supported_protocols": [
+        "ldap"
+      ]
+    },
+    "ldap-checker": {
+      "name": "ldap-checker",
+      "description": "[REMOVED] Checks whether LDAP signing and channel binding are required and / or enforced",
+      "supported_protocols": [
+        "ldap"
+      ]
+    },
+    "spooler": {
+      "name": "spooler",
+      "description": "Detect if print spooler is enabled or not",
+      "supported_protocols": [
+        "smb",
+        "wmi"
+      ]
+    },
+    "adcs": {
+      "name": "adcs",
+      "description": "Find PKI Enrollment Services in Active Directory and Certificate Templates Names",
+      "supported_protocols": [
+        "ldap"
+      ]
+    },
+    "get-scriptpath": {
+      "name": "get-scriptpath",
+      "description": "Get the scriptPath attribute of all users.",
+      "supported_protocols": [
+        "ldap"
+      ]
+    },
+    "get-network": {
+      "name": "get-network",
+      "description": "Query all DNS records with the corresponding IP from the domain.",
+      "supported_protocols": [
+        "ldap"
+      ]
+    },
+    "subnets": {
+      "name": "subnets",
+      "description": "Retrieves the different Sites and Subnets of an Active Directory",
+      "supported_protocols": [
+        "ldap"
+      ]
+    },
+    "webdav": {
+      "name": "webdav",
+      "description": "Checks whether the WebClient service is running on the target",
+      "supported_protocols": [
+        "smb"
+      ]
+    },
+    "enum_impersonate": {
+      "name": "enum_impersonate",
+      "description": "Read-only SQL enumeration fixture",
+      "supported_protocols": [
+        "mssql"
+      ]
+    },
+    "enum_links": {
+      "name": "enum_links",
+      "description": "Read-only SQL enumeration fixture",
+      "supported_protocols": [
+        "mssql"
+      ]
+    },
+    "enum_logins": {
+      "name": "enum_logins",
+      "description": "Read-only SQL enumeration fixture",
+      "supported_protocols": [
+        "mssql"
+      ]
+    },
+    "bitlocker": {
+      "name": "bitlocker",
+      "description": "Enumerating BitLocker Status",
+      "supported_protocols": [
+        "smb",
+        "wmi"
+      ]
+    },
+    "enum_dns": {
+      "description": "Uses WMI to dump DNS from an AD DNS Server",
+      "supported_protocols": [
+        "smb",
+        "wmi"
+      ]
+    },
+    "enum_interfaces": {
+      "description": "Retrieve the list of network interfaces info (Name, IP Address, Subnet Mask, Default Gateway) from remote Windows registry (formerly --interfaces)",
+      "supported_protocols": [
+        "smb"
+      ]
+    },
+    "get_netconnections": {
+      "description": "Uses WMI to query network connections.",
+      "supported_protocols": [
+        "smb",
+        "wmi"
+      ]
+    },
+    "lockscreendoors": {
+      "description": "Detect Windows lock screen backdoors by checking FileDescriptions of accessibility binaries.",
+      "supported_protocols": [
+        "smb"
+      ]
+    },
+    "mssql_priv": {
+      "description": "Enumerate and exploit MSSQL privileges",
+      "supported_protocols": [
+        "mssql"
+      ]
+    },
+    "ntlmv1": {
+      "description": "Detect if lmcompatibilitylevel on the target is set to lower than 3 (which means ntlmv1 is enabled)",
+      "supported_protocols": [
+        "smb"
+      ]
+    },
+    "obsolete": {
+      "description": "Extract all obsolete operating systems from LDAP",
+      "supported_protocols": [
+        "ldap"
+      ]
+    },
+    "tombstone": {
+      "description": "Query, restore and delete AD objects",
+      "supported_protocols": [
+        "ldap"
+      ]
+    },
+    "wdigest": {
+      "description": "Creates/Deletes the 'UseLogonCredential' registry key enabling WDigest cred dumping on Windows >= 8.1",
+      "supported_protocols": [
+        "smb"
+      ]
+    },
+    "enum_av": {
+      "description": "Low-privilege endpoint-protection enumeration fixture",
+      "supported_protocols": [
+        "smb"
+      ]
+    },
+    "sccm-recon6": {
+      "description": "SCCM discovery fixture with possible follow-up connections",
+      "supported_protocols": [
+        "smb"
+      ]
+    },
+    "wcc": {
+      "description": "Administrator-only Windows configuration fixture",
+      "supported_protocols": [
+        "smb"
+      ]
+    }
+  }
+}

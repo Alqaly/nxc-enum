@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "type": "users",
+    "version": 5
+  },
+  "data": [
+    {
+      "ObjectIdentifier": "S-1-5-21-100-200-300-1101",
+      "Properties": {
+        "name": "AUDITOR@EXAMPLE.TEST"
+      }
+    },
+    {
+      "ObjectIdentifier": "S-1-5-21-100-200-300-1102",
+      "Properties": {
+        "name": "ADMIN@EXAMPLE.TEST"
+      }
+    }
+  ]
+}

